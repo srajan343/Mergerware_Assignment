@@ -1,0 +1,45 @@
+<head>
+    <title>Loan Management App</title>
+</head>
+
+<body>
+    <h1>Loan Management App</h1>
+
+    <!-- Registration Form -->
+    <form class="register-form">
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+
+        <label for="role">Role:</label>
+        <select name="role" required>
+        <option value="admin">Admin</option>
+        <option value="borrower">Borrower</option>
+        <option value="lender">Lender</option>
+      </select>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <!-- Loan Request Form -->
+    <form class="loan-form">
+        <label for="userId">User ID:</label>
+        <input type="text" name="userId" required>
+
+        <button type="submit">Request Loan</button>
+    </form>
+
+    <!-- Payment Confirmation Form -->
+    <form class="payment-form">
+        <label for="userId">User ID:</label>
+        <input type="text" name="userId" required>
+
+        <button type="submit">Confirm Payment</button>
+    </form>
+
+    <!-- User List -->
+    <ul>
+        {{#each users}}
+        <li>{{email}} (Role: {{role}}, Status: {{status}})</li>
+        {{/each}}
+    </ul>
+</body>
